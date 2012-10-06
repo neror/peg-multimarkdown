@@ -1,7 +1,12 @@
 /* parsing_functions.c - Functions for parsing markdown and
  * freeing element lists. */
 
-int yyparse(void);
+void parse_from(yyrule yystart)	
+{
+    GREG g;
+    memset(&g, 0, sizeof(g));
+    yyparse_from(&g, yystart);    /* first pass, just to collect references */
+}
 
 static void free_element_contents(element elt);
 
@@ -76,7 +81,7 @@ element * parse_references(char *string, int extensions) {
 
     oldcharbuf = charbuf;
     charbuf = string;
-    yyparsefrom(yy_References);    /* first pass, just to collect references */
+    parse_from(yy_References);    /* first pass, just to collect references */
     charbuf = oldcharbuf;
 
     return references;
@@ -92,7 +97,7 @@ element * parse_notes(char *string, int extensions, element *reference_list) {
         references = reference_list;
         oldcharbuf = charbuf;
         charbuf = string;
-        yyparsefrom(yy_Notes);     /* second pass for notes */
+        parse_from(yy_Notes);     /* second pass for notes */
         charbuf = oldcharbuf;
     }
 
@@ -109,7 +114,7 @@ element * parse_labels(char *string, int extensions, element *reference_list, el
 
     oldcharbuf = charbuf;
     charbuf = string;
-    yyparsefrom(yy_AutoLabels);    /* third pass, to collect labels */
+    parse_from(yy_AutoLabels);    /* third pass, to collect labels */
     charbuf = oldcharbuf;
 
     return labels;
@@ -126,7 +131,7 @@ element * parse_markdown(char *string, int extensions, element *reference_list, 
     oldcharbuf = charbuf;
     charbuf = string;
 
-    yyparsefrom(yy_Doc);
+    parse_from(yy_Doc);
 
     charbuf = oldcharbuf;          /* restore charbuf to original value */
 
@@ -152,7 +157,7 @@ element * parse_markdown_with_metadata(char *string, int extensions, element *re
 
 	start_time = clock();
 
-    yyparsefrom(yy_DocWithMetaData);
+    parse_from(yy_DocWithMetaData);
     charbuf = oldcharbuf;          /* restore charbuf to original value */
 
     /* reset start_time for subsequent passes */
@@ -176,7 +181,7 @@ element * parse_metadata_only(char *string, int extensions) {
     oldcharbuf = charbuf;
     charbuf = string;
 
-    yyparsefrom(yy_MetaDataOnly);
+    parse_from(yy_MetaDataOnly);
 
     charbuf = oldcharbuf;          /* restore charbuf to original value */
     return parse_result;
@@ -191,7 +196,7 @@ element * parse_markdown_for_opml(char *string, int extensions) {
     oldcharbuf = charbuf;
     charbuf = string;
 
-    yyparsefrom(yy_DocForOPML);
+    parse_from(yy_DocForOPML);
 
     charbuf = oldcharbuf;          /* restore charbuf to original value */
     return parse_result;
