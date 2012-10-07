@@ -236,12 +236,21 @@ static bool find_note(element **result, char *label) {
 
  ***********************************************************************/
 
-# define YYSTYPE element *
-#ifdef __DEBUG__
-# define YY_DEBUG 1
-#endif
+  # define YYSTYPE element *
+  #ifdef __DEBUG__
+  # define YY_DEBUG 1
+  #endif
 
-
+  #define YY_INPUT(buf, result, max_size)              \
+  {                                                    \
+      int yyc;                                         \
+      if (charbuf && *charbuf != '\0') {               \
+          yyc= *charbuf++;                             \
+      } else {                                         \
+          yyc= EOF;                                    \
+      }                                                \
+      result= (EOF == yyc) ? 0 : (*(buf)= yyc, 1);     \
+  }
 
 
 /* peg-multimarkdown additions */
