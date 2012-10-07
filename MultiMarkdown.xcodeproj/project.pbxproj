@@ -32,13 +32,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		4AFA467813E3633800CFA132 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 65F0B88813DF6C0D00D0980C;
-			remoteInfo = Peg;
-		};
 		65F0B8FC13DF724D00D0980C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 08FB7793FE84155DC02AAC07 /* Project object */;
@@ -283,7 +276,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				4AFA467913E3633800CFA132 /* PBXTargetDependency */,
 			);
 			name = libMultiMarkdown;
 			productName = multimarkdown;
@@ -352,7 +344,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./peg/leg -o markdown_parser.c markdown_parser.leg";
+			shellScript = "/usr/local/bin/greg -o markdown_parser.c markdown_parser.leg";
 		};
 		65F0B8E913DF714E00D0980C /* Run Tests */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -393,11 +385,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		4AFA467913E3633800CFA132 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 65F0B88813DF6C0D00D0980C /* Peg */;
-			targetProxy = 4AFA467813E3633800CFA132 /* PBXContainerItemProxy */;
-		};
 		65F0B8FD13DF724D00D0980C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 8DD76FA90486AB0100D96B5E /* MultiMarkdown */;

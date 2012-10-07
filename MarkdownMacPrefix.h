@@ -9,7 +9,7 @@
 #import "markdown_peg.h"
 
 // peg
-#define Class PEG_Class
-#import "tree.h"
-#undef Class
+//#define Class PEG_Class
+//#import "tree.h"
+//#undef Class
 
