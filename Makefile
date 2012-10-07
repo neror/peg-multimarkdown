@@ -39,20 +39,9 @@ ifeq ($(ARCH), i386)
 endif
 
 OBJS=markdown_parser.o markdown_output.o markdown_lib.o GLibFacade.o
-PEGDIR_ORIG=peg-0.1.4
-PEGDIR=peg
-LEG=$(PEGDIR)/leg$(X)
 PKG_CONFIG = pkg-config
 
 ALL : $(PROGRAM)
-
-$(PEGDIR):
-	cp -r $(PEGDIR_ORIG) $(PEGDIR) ; \
-	patch -p1 < peg-memory-fix.patch ; \
-	patch -p1 < peg-exe-ext.patch
-
-$(LEG): $(PEGDIR)
-	CC=gcc $(MAKE) -C $(PEGDIR)
 
 %.o : %.c markdown_peg.h
 	$(CC) -c $(CFLAGS) -o $@ $<
@@ -61,8 +50,8 @@ $(PROGRAM) : markdown.c $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $(OBJS) $<
 	@echo "$(FINALNOTES)"
 
-markdown_parser.c : markdown_parser.leg $(LEG) markdown_peg.h parsing_functions.c utility_functions.c
-	$(LEG) -o $@ $<
+markdown_parser.c : markdown_parser.leg  markdown_peg.h parsing_functions.c utility_functions.c
+	greg -o $@ $<
 
 .PHONY: clean test
 
@@ -77,10 +66,6 @@ clean:
 	rm windows_installer/multimarkdown.xml.backup; \
 	rm windows_installer/LICENSE.html; \
 	rm -rf mac_installer/*.pkg
-
-distclean: clean
-	rm -rf $(PEGDIR)
-	$(MAKE) -C $(PEGDIR) spotless
 
 test: $(PROGRAM)
 	cd MarkdownTest; \
