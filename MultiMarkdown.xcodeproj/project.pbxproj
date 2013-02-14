@@ -27,6 +27,9 @@
 		4AFA467613E362B500CFA132 /* markdown_parser.c in Sources */ = {isa = PBXBuildFile; fileRef = 65F0B8B113DF6D4000D0980C /* markdown_parser.c */; };
 		4AFA467A13E363FA00CFA132 /* markdown_lib.c in Sources */ = {isa = PBXBuildFile; fileRef = 65F0B66113DF47CC00D0980C /* markdown_lib.c */; };
 		4AFA467D13E3640600CFA132 /* markdown_output.c in Sources */ = {isa = PBXBuildFile; fileRef = 65F0B66313DF47CC00D0980C /* markdown_output.c */; };
+		5AB9C75E16CD343F0079E3ED /* parsing_functions.c in Sources */ = {isa = PBXBuildFile; fileRef = 65F0B66A13DF47CC00D0980C /* parsing_functions.c */; };
+		5AB9C75F16CD347E0079E3ED /* utility_functions.c in Sources */ = {isa = PBXBuildFile; fileRef = 65F0B69A13DF47CC00D0980C /* utility_functions.c */; };
+		5AB9C76016CD34990079E3ED /* odf.c in Sources */ = {isa = PBXBuildFile; fileRef = 65F0B66813DF47CC00D0980C /* odf.c */; };
 		65F0B69E13DF47CC00D0980C /* markdown.c in Sources */ = {isa = PBXBuildFile; fileRef = 65F0B66713DF47CC00D0980C /* markdown.c */; };
 		65F89EA713E37B9D006A34B8 /* libMultiMarkdown.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AFA466213E3624F00CFA132 /* libMultiMarkdown.a */; };
 /* End PBXBuildFile section */
@@ -161,7 +164,7 @@
 				65F0B66813DF47CC00D0980C /* odf.c */,
 				65F0B66913DF47CC00D0980C /* odf.h */,
 				65F0B66A13DF47CC00D0980C /* parsing_functions.c */,
-				65F0B66B13DF47CC00D0980C /* peg-0.1.4 */,
+				65F0B66B13DF47CC00D0980C /* peg-0.1.9 */,
 				65F0B69A13DF47CC00D0980C /* utility_functions.c */,
 			);
 			name = Source;
@@ -195,7 +198,7 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		65F0B66B13DF47CC00D0980C /* peg-0.1.4 */ = {
+		65F0B66B13DF47CC00D0980C /* peg-0.1.9 */ = {
 			isa = PBXGroup;
 			children = (
 				65F0B66C13DF47CC00D0980C /* compile.c */,
@@ -212,7 +215,7 @@
 				65F0B69713DF47CC00D0980C /* tree.h */,
 				65F0B69913DF47CC00D0980C /* version.h */,
 			);
-			path = "peg-0.1.4";
+			path = "peg-0.1.9";
 			sourceTree = "<group>";
 		};
 		65F0B8B513DF6D4700D0980C /* Generated Sources */ = {
@@ -261,7 +264,7 @@
 			buildPhases = (
 			);
 			buildToolPath = /usr/bin/make;
-			buildWorkingDirectory = "./peg-0.1.4";
+			buildWorkingDirectory = "./peg-0.1.9";
 			dependencies = (
 			);
 			name = Peg;
@@ -352,7 +355,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./peg/leg -o markdown_parser.c markdown_parser.leg";
+			shellScript = "./peg-0.1.9/leg -o markdown_parser.c markdown_parser.leg";
 		};
 		65F0B8E913DF714E00D0980C /* Run Tests */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -375,6 +378,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5AB9C76016CD34990079E3ED /* odf.c in Sources */,
+				5AB9C75F16CD347E0079E3ED /* utility_functions.c in Sources */,
+				5AB9C75E16CD343F0079E3ED /* parsing_functions.c in Sources */,
 				4AFA467513E362AC00CFA132 /* GLibFacade.c in Sources */,
 				4AFA467613E362B500CFA132 /* markdown_parser.c in Sources */,
 				4AFA467A13E363FA00CFA132 /* markdown_lib.c in Sources */,
@@ -442,11 +448,7 @@
 		1DEB928A08733DD80010E9CD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					i386,
-					ppc,
-					x86_64,
-				);
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -460,11 +462,7 @@
 		1DEB928B08733DD80010E9CD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					i386,
-					ppc,
-					x86_64,
-				);
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
@@ -511,11 +509,7 @@
 		651A542813E20D2400BCB02A /* Release10.6+ */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = (
-					i386,
-					ppc,
-					x86_64,
-				);
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
