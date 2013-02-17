@@ -1062,13 +1062,16 @@ AutoLabels = ( &{ !extension(EXT_COMPATIBILITY) && !extension(EXT_NO_LABELS)}
                 GString *label = g_string_new("");
                 char *lab;
                 print_raw_element_list(label, b->children);
-                if (b->children->key == AUTOLABEL) {
-                    lab = label_from_string(b->children->contents.str,0);
-                } else {
-                    lab = label_from_string(label->str,0);
+                if (b->children != NULL) {
+                    if (b->children->key == AUTOLABEL) {
+                        lab = label_from_string(b->children->contents.str,0);
+                    } else {
+                        lab = label_from_string(label->str,0);
+                    }
+                    a = cons(mk_str(lab), a);
+
+                    free(lab);
                 }
-                a = cons(mk_str(lab), a);
-                free(lab);
                 g_string_free(label,true);
                 /* TODO: this causes segfault when trying to use a footnote in the header */
                 /* I would like to fix it at some point */
@@ -1076,31 +1079,38 @@ AutoLabels = ( &{ !extension(EXT_COMPATIBILITY) && !extension(EXT_NO_LABELS)}
             } | c:TableCaption {
                 GString *label = g_string_new("");
                 char *lab;
-                if (c->children->key == TABLELABEL) {
-                    print_raw_element_list(label, c->children->children);
-                } else {
-                    print_raw_element_list(label, c->children);
+                if (c->children != NULL) {
+                    if (c->children->key == TABLELABEL) {
+                        print_raw_element_list(label, c->children->children);
+                    } else {
+                        print_raw_element_list(label, c->children);
+                    }
+                    lab = label_from_string(label->str,0);
+                    a = cons(mk_str(lab), a);
+
+                    free(lab);
                 }
-                lab = label_from_string(label->str,0);
-                a = cons(mk_str(lab), a);
-                free(lab);
                 g_string_free(label,true);
                 free_element_list(c);} TableBody
             | (TableBody|SeparatorLine)+ c:TableCaption {
                 GString *label = g_string_new("");
                 char *lab;
-                if (c->children->key == TABLELABEL) {
-                    print_raw_element_list(label, c->children->children);
-                } else {
-                    print_raw_element_list(label, c->children);
+                if (c->children != NULL) {
+                    if (c->children->key == TABLELABEL) {
+                        print_raw_element_list(label, c->children->children);
+                    } else {
+                        print_raw_element_list(label, c->children);
+                    }
+                    lab = label_from_string(label->str,0);
+                    a = cons(mk_str(lab), a);
+
+                    free(lab);
                 }
-                lab = label_from_string(label->str,0);
-                a = cons(mk_str(lab), a);
-                free(lab);
                 g_string_free(label,true);
                 free_element_list(c);}
             | SkipBlock )*
             { labels = a; })
+
 
 DefinitionList =  a:StartList &(TermLine+ Newline? NonindentSpace ':')
                 (
