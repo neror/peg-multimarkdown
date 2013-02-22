@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXAggregateTarget section */
@@ -29,6 +29,9 @@
 		4AFA467D13E3640600CFA132 /* markdown_output.c in Sources */ = {isa = PBXBuildFile; fileRef = 65F0B66313DF47CC00D0980C /* markdown_output.c */; };
 		65F0B69E13DF47CC00D0980C /* markdown.c in Sources */ = {isa = PBXBuildFile; fileRef = 65F0B66713DF47CC00D0980C /* markdown.c */; };
 		65F89EA713E37B9D006A34B8 /* libMultiMarkdown.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AFA466213E3624F00CFA132 /* libMultiMarkdown.a */; };
+		DF592D0016D813EB00CD6D39 /* utility_functions.c in Sources */ = {isa = PBXBuildFile; fileRef = 65F0B69A13DF47CC00D0980C /* utility_functions.c */; };
+		DF592D0116D813F300CD6D39 /* parsing_functions.c in Sources */ = {isa = PBXBuildFile; fileRef = 65F0B66A13DF47CC00D0980C /* parsing_functions.c */; };
+		DF592D0216D813F900CD6D39 /* odf.c in Sources */ = {isa = PBXBuildFile; fileRef = 65F0B66813DF47CC00D0980C /* odf.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -85,19 +88,6 @@
 		65F0B66813DF47CC00D0980C /* odf.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = odf.c; sourceTree = "<group>"; };
 		65F0B66913DF47CC00D0980C /* odf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = odf.h; sourceTree = "<group>"; };
 		65F0B66A13DF47CC00D0980C /* parsing_functions.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = parsing_functions.c; sourceTree = "<group>"; };
-		65F0B66C13DF47CC00D0980C /* compile.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = compile.c; sourceTree = "<group>"; };
-		65F0B68B13DF47CC00D0980C /* leg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = leg; sourceTree = "<group>"; };
-		65F0B68C13DF47CC00D0980C /* leg.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = leg.c; sourceTree = "<group>"; };
-		65F0B68D13DF47CC00D0980C /* leg.leg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = leg.leg; sourceTree = "<group>"; };
-		65F0B68F13DF47CC00D0980C /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
-		65F0B69013DF47CC00D0980C /* peg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = peg; sourceTree = "<group>"; };
-		65F0B69113DF47CC00D0980C /* peg.1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.man; path = peg.1; sourceTree = "<group>"; };
-		65F0B69213DF47CC00D0980C /* peg.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = peg.c; sourceTree = "<group>"; };
-		65F0B69413DF47CC00D0980C /* peg.peg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = peg.peg; sourceTree = "<group>"; };
-		65F0B69513DF47CC00D0980C /* peg.peg-c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "peg.peg-c"; sourceTree = "<group>"; };
-		65F0B69613DF47CC00D0980C /* tree.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = tree.c; sourceTree = "<group>"; };
-		65F0B69713DF47CC00D0980C /* tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tree.h; sourceTree = "<group>"; };
-		65F0B69913DF47CC00D0980C /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
 		65F0B69A13DF47CC00D0980C /* utility_functions.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; fileEncoding = 4; path = utility_functions.c; sourceTree = "<group>"; };
 		65F0B6C513DF485F00D0980C /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		65F0B6D713DF4C6B00D0980C /* MarkdownMacPrefix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarkdownMacPrefix.h; sourceTree = "<group>"; };
@@ -108,6 +98,53 @@
 		65F89EB913E37BEF006A34B8 /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		65F89EBA13E37C2A006A34B8 /* Release.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
 		8DD76FB20486AB0100D96B5E /* multimarkdown */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = multimarkdown; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF592CD016D7F1D400CD6D39 /* compile.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = compile.c; sourceTree = "<group>"; };
+		DF592CD116D7F1D400CD6D39 /* compile.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = compile.o; sourceTree = "<group>"; };
+		DF592CD316D7F1D400CD6D39 /* accept.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = accept.c; sourceTree = "<group>"; };
+		DF592CD416D7F1D400CD6D39 /* accept.peg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = accept.peg; sourceTree = "<group>"; };
+		DF592CD516D7F1D400CD6D39 /* accept.ref */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = accept.ref; sourceTree = "<group>"; };
+		DF592CD616D7F1D400CD6D39 /* basic.leg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = basic.leg; sourceTree = "<group>"; };
+		DF592CD716D7F1D400CD6D39 /* basic.ref */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = basic.ref; sourceTree = "<group>"; };
+		DF592CD816D7F1D400CD6D39 /* bench.bas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = bench.bas; sourceTree = "<group>"; };
+		DF592CD916D7F1D400CD6D39 /* calc.leg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = calc.leg; sourceTree = "<group>"; };
+		DF592CDA16D7F1D400CD6D39 /* calc.ref */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = calc.ref; sourceTree = "<group>"; };
+		DF592CDB16D7F1D400CD6D39 /* dc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = dc.c; sourceTree = "<group>"; };
+		DF592CDC16D7F1D400CD6D39 /* dc.peg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dc.peg; sourceTree = "<group>"; };
+		DF592CDD16D7F1D400CD6D39 /* dc.ref */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dc.ref; sourceTree = "<group>"; };
+		DF592CDE16D7F1D400CD6D39 /* dcv.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = dcv.c; sourceTree = "<group>"; };
+		DF592CDF16D7F1D400CD6D39 /* dcv.peg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dcv.peg; sourceTree = "<group>"; };
+		DF592CE016D7F1D400CD6D39 /* dcv.ref */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = dcv.ref; sourceTree = "<group>"; };
+		DF592CE116D7F1D400CD6D39 /* fibonacci.bas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = fibonacci.bas; sourceTree = "<group>"; };
+		DF592CE216D7F1D400CD6D39 /* left.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = left.c; sourceTree = "<group>"; };
+		DF592CE316D7F1D400CD6D39 /* left.peg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = left.peg; sourceTree = "<group>"; };
+		DF592CE416D7F1D400CD6D39 /* localctx.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = localctx.c; sourceTree = "<group>"; };
+		DF592CE516D7F1D400CD6D39 /* localctx.ref */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = localctx.ref; sourceTree = "<group>"; };
+		DF592CE616D7F1D400CD6D39 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		DF592CE716D7F1D400CD6D39 /* rule.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rule.c; sourceTree = "<group>"; };
+		DF592CE816D7F1D400CD6D39 /* rule.peg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rule.peg; sourceTree = "<group>"; };
+		DF592CE916D7F1D400CD6D39 /* rule.ref */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = rule.ref; sourceTree = "<group>"; };
+		DF592CEA16D7F1D400CD6D39 /* test.bas */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.bas; sourceTree = "<group>"; };
+		DF592CEB16D7F1D400CD6D39 /* test.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = test.c; sourceTree = "<group>"; };
+		DF592CEC16D7F1D400CD6D39 /* test.peg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.peg; sourceTree = "<group>"; };
+		DF592CED16D7F1D400CD6D39 /* test.ref */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.ref; sourceTree = "<group>"; };
+		DF592CEE16D7F1D400CD6D39 /* username.leg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = username.leg; sourceTree = "<group>"; };
+		DF592CEF16D7F1D400CD6D39 /* wc.leg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wc.leg; sourceTree = "<group>"; };
+		DF592CF016D7F1D400CD6D39 /* wc.ref */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = wc.ref; sourceTree = "<group>"; };
+		DF592CF116D7F1D400CD6D39 /* leg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = leg; sourceTree = "<group>"; };
+		DF592CF216D7F1D400CD6D39 /* leg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = leg.c; sourceTree = "<group>"; };
+		DF592CF316D7F1D400CD6D39 /* leg.leg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = leg.leg; sourceTree = "<group>"; };
+		DF592CF416D7F1D400CD6D39 /* leg.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = leg.o; sourceTree = "<group>"; };
+		DF592CF516D7F1D400CD6D39 /* Makefile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		DF592CF616D7F1D400CD6D39 /* peg */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.executable"; path = peg; sourceTree = "<group>"; };
+		DF592CF716D7F1D400CD6D39 /* peg.1 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.man; path = peg.1; sourceTree = "<group>"; };
+		DF592CF816D7F1D400CD6D39 /* peg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = peg.c; sourceTree = "<group>"; };
+		DF592CF916D7F1D400CD6D39 /* peg.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = peg.o; sourceTree = "<group>"; };
+		DF592CFA16D7F1D400CD6D39 /* peg.peg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = peg.peg; sourceTree = "<group>"; };
+		DF592CFB16D7F1D400CD6D39 /* peg.peg-c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "peg.peg-c"; sourceTree = "<group>"; };
+		DF592CFC16D7F1D400CD6D39 /* tree.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = tree.c; sourceTree = "<group>"; };
+		DF592CFD16D7F1D400CD6D39 /* tree.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tree.h; sourceTree = "<group>"; };
+		DF592CFE16D7F1D400CD6D39 /* tree.o */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.objfile"; path = tree.o; sourceTree = "<group>"; };
+		DF592CFF16D7F1D400CD6D39 /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,8 +198,8 @@
 				65F0B66813DF47CC00D0980C /* odf.c */,
 				65F0B66913DF47CC00D0980C /* odf.h */,
 				65F0B66A13DF47CC00D0980C /* parsing_functions.c */,
-				65F0B66B13DF47CC00D0980C /* peg-0.1.4 */,
 				65F0B69A13DF47CC00D0980C /* utility_functions.c */,
+				DF592CCF16D7F1D300CD6D39 /* peg-0.1.9 */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -195,26 +232,6 @@
 			name = "Other Frameworks";
 			sourceTree = "<group>";
 		};
-		65F0B66B13DF47CC00D0980C /* peg-0.1.4 */ = {
-			isa = PBXGroup;
-			children = (
-				65F0B66C13DF47CC00D0980C /* compile.c */,
-				65F0B68B13DF47CC00D0980C /* leg */,
-				65F0B68C13DF47CC00D0980C /* leg.c */,
-				65F0B68D13DF47CC00D0980C /* leg.leg */,
-				65F0B68F13DF47CC00D0980C /* Makefile */,
-				65F0B69013DF47CC00D0980C /* peg */,
-				65F0B69113DF47CC00D0980C /* peg.1 */,
-				65F0B69213DF47CC00D0980C /* peg.c */,
-				65F0B69413DF47CC00D0980C /* peg.peg */,
-				65F0B69513DF47CC00D0980C /* peg.peg-c */,
-				65F0B69613DF47CC00D0980C /* tree.c */,
-				65F0B69713DF47CC00D0980C /* tree.h */,
-				65F0B69913DF47CC00D0980C /* version.h */,
-			);
-			path = "peg-0.1.4";
-			sourceTree = "<group>";
-		};
 		65F0B8B513DF6D4700D0980C /* Generated Sources */ = {
 			isa = PBXGroup;
 			children = (
@@ -241,6 +258,68 @@
 			name = Documentation;
 			sourceTree = "<group>";
 		};
+		DF592CCF16D7F1D300CD6D39 /* peg-0.1.9 */ = {
+			isa = PBXGroup;
+			children = (
+				DF592CD016D7F1D400CD6D39 /* compile.c */,
+				DF592CD116D7F1D400CD6D39 /* compile.o */,
+				DF592CD216D7F1D400CD6D39 /* examples */,
+				DF592CF116D7F1D400CD6D39 /* leg */,
+				DF592CF216D7F1D400CD6D39 /* leg.c */,
+				DF592CF316D7F1D400CD6D39 /* leg.leg */,
+				DF592CF416D7F1D400CD6D39 /* leg.o */,
+				DF592CF516D7F1D400CD6D39 /* Makefile */,
+				DF592CF616D7F1D400CD6D39 /* peg */,
+				DF592CF716D7F1D400CD6D39 /* peg.1 */,
+				DF592CF816D7F1D400CD6D39 /* peg.c */,
+				DF592CF916D7F1D400CD6D39 /* peg.o */,
+				DF592CFA16D7F1D400CD6D39 /* peg.peg */,
+				DF592CFB16D7F1D400CD6D39 /* peg.peg-c */,
+				DF592CFC16D7F1D400CD6D39 /* tree.c */,
+				DF592CFD16D7F1D400CD6D39 /* tree.h */,
+				DF592CFE16D7F1D400CD6D39 /* tree.o */,
+				DF592CFF16D7F1D400CD6D39 /* version.h */,
+			);
+			path = "peg-0.1.9";
+			sourceTree = "<group>";
+		};
+		DF592CD216D7F1D400CD6D39 /* examples */ = {
+			isa = PBXGroup;
+			children = (
+				DF592CD316D7F1D400CD6D39 /* accept.c */,
+				DF592CD416D7F1D400CD6D39 /* accept.peg */,
+				DF592CD516D7F1D400CD6D39 /* accept.ref */,
+				DF592CD616D7F1D400CD6D39 /* basic.leg */,
+				DF592CD716D7F1D400CD6D39 /* basic.ref */,
+				DF592CD816D7F1D400CD6D39 /* bench.bas */,
+				DF592CD916D7F1D400CD6D39 /* calc.leg */,
+				DF592CDA16D7F1D400CD6D39 /* calc.ref */,
+				DF592CDB16D7F1D400CD6D39 /* dc.c */,
+				DF592CDC16D7F1D400CD6D39 /* dc.peg */,
+				DF592CDD16D7F1D400CD6D39 /* dc.ref */,
+				DF592CDE16D7F1D400CD6D39 /* dcv.c */,
+				DF592CDF16D7F1D400CD6D39 /* dcv.peg */,
+				DF592CE016D7F1D400CD6D39 /* dcv.ref */,
+				DF592CE116D7F1D400CD6D39 /* fibonacci.bas */,
+				DF592CE216D7F1D400CD6D39 /* left.c */,
+				DF592CE316D7F1D400CD6D39 /* left.peg */,
+				DF592CE416D7F1D400CD6D39 /* localctx.c */,
+				DF592CE516D7F1D400CD6D39 /* localctx.ref */,
+				DF592CE616D7F1D400CD6D39 /* Makefile */,
+				DF592CE716D7F1D400CD6D39 /* rule.c */,
+				DF592CE816D7F1D400CD6D39 /* rule.peg */,
+				DF592CE916D7F1D400CD6D39 /* rule.ref */,
+				DF592CEA16D7F1D400CD6D39 /* test.bas */,
+				DF592CEB16D7F1D400CD6D39 /* test.c */,
+				DF592CEC16D7F1D400CD6D39 /* test.peg */,
+				DF592CED16D7F1D400CD6D39 /* test.ref */,
+				DF592CEE16D7F1D400CD6D39 /* username.leg */,
+				DF592CEF16D7F1D400CD6D39 /* wc.leg */,
+				DF592CF016D7F1D400CD6D39 /* wc.ref */,
+			);
+			path = examples;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -261,7 +340,7 @@
 			buildPhases = (
 			);
 			buildToolPath = /usr/bin/make;
-			buildWorkingDirectory = "./peg-0.1.4";
+			buildWorkingDirectory = "./peg-0.1.9";
 			dependencies = (
 			);
 			name = Peg;
@@ -315,10 +394,10 @@
 		08FB7793FE84155DC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0410;
+				LastUpgradeCheck = 0460;
 			};
 			buildConfigurationList = 1DEB928908733DD80010E9CD /* Build configuration list for PBXProject "MultiMarkdown" */;
-			compatibilityVersion = "Xcode 3.1";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
 			knownRegions = (
@@ -352,7 +431,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "./peg/leg -o markdown_parser.c markdown_parser.leg";
+			shellScript = "./peg-0.1.9/leg -o markdown_parser.c markdown_parser.leg";
 		};
 		65F0B8E913DF714E00D0980C /* Run Tests */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -375,10 +454,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4AFA467513E362AC00CFA132 /* GLibFacade.c in Sources */,
 				4AFA467613E362B500CFA132 /* markdown_parser.c in Sources */,
-				4AFA467A13E363FA00CFA132 /* markdown_lib.c in Sources */,
 				4AFA467D13E3640600CFA132 /* markdown_output.c in Sources */,
+				4AFA467A13E363FA00CFA132 /* markdown_lib.c in Sources */,
+				4AFA467513E362AC00CFA132 /* GLibFacade.c in Sources */,
+				DF592D0016D813EB00CD6D39 /* utility_functions.c in Sources */,
+				DF592D0116D813F300CD6D39 /* parsing_functions.c in Sources */,
+				DF592D0216D813F900CD6D39 /* odf.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -452,7 +534,6 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PREBINDING = NO;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -469,7 +550,6 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				PREBINDING = NO;
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -479,6 +559,7 @@
 			baseConfigurationReference = 65F89EB913E37BEF006A34B8 /* Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -493,6 +574,7 @@
 			baseConfigurationReference = 65F89EBA13E37C2A006A34B8 /* Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				HEADER_SEARCH_PATHS = .;
 				PRODUCT_NAME = MultiMarkdown;
 			};
@@ -503,6 +585,7 @@
 			baseConfigurationReference = 65F89E8113E379ED006A34B8 /* Release10.6+.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
 				HEADER_SEARCH_PATHS = .;
 				PRODUCT_NAME = MultiMarkdown;
 			};
@@ -520,7 +603,6 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.4;
-				PREBINDING = NO;
 				SDKROOT = macosx;
 			};
 			name = "Release10.6+";
@@ -539,9 +621,10 @@
 		651A542A13E20D2400BCB02A /* Release10.6+ */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CC = "`xcrun -find clang`";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = Peg;
 				ZERO_LINK = NO;
 			};
@@ -550,9 +633,9 @@
 		651A542B13E20D2400BCB02A /* Release10.6+ */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = "MultiMarkdown Tests";
 				ZERO_LINK = NO;
 			};
@@ -561,6 +644,8 @@
 		65F0B88913DF6C0D00D0980C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CC = "`xcrun -find clang`";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -571,9 +656,10 @@
 		65F0B88A13DF6C0D00D0980C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CC = "`xcrun -find clang`";
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = Peg;
 				ZERO_LINK = NO;
 			};
@@ -582,6 +668,7 @@
 		65F0B8EB13DF714F00D0980C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -592,9 +679,9 @@
 		65F0B8EC13DF714F00D0980C /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				PRODUCT_NAME = "MultiMarkdown Tests";
 				ZERO_LINK = NO;
 			};

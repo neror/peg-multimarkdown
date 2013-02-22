@@ -14,8 +14,8 @@ markdown_parser.c
 /multimarkdown
 /multimarkdown.exe
 
-peg-0.1.4/peg
-peg-0.1.4/leg
+peg-0.1.9/peg
+peg-0.1.9/leg
 
 /mac_installer/Resources/*.html
 /mac_installer/Package_Root/usr/local/bin/multimarkdown
